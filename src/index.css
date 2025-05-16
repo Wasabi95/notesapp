@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -32,4 +32,87 @@
 }
 .box:nth-child(3n + 3) {
   grid-column: 3;
+} */
+
+/* Add this to your CSS file or style tag */
+.navbar {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content {
+  margin-top: 80px; /* Offset for fixed navbar */
+  width: 100%;
+  padding: 20px;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.note-card {
+  transition: transform 0.2s ease-in-out;
+  background: white;
+  overflow: hidden;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+}
+
+.upload-preview {
+  object-fit: cover;
+  border-radius: 8px;
+  height: 200px;
+}
+
+.form-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .upload-preview {
+    height: 150px;
+  }
+}
+
+/* Amplify component overrides */
+.amplify-button[data-variation='primary'] {
+  background: #2563eb;
+}
+
+.amplify-button[data-variation='destructive'] {
+  background: #dc2626;
+}
+
+.amplify-input {
+  border-radius: 8px;
 }
